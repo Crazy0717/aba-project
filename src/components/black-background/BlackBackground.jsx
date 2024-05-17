@@ -1,4 +1,4 @@
-import "./blackBackground.scss"
+import "./BlackBackground.scss"
 import { disablEveryThing } from "../../slices/states"
 import { useDispatch, useSelector } from "react-redux"
 
