@@ -1,0 +1,194 @@
+.certificateStages {
+  padding: 160px 140px;
+  color: #141414;
+  .top {
+    h2 {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 41.15px;
+    }
+  }
+  .content {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      .MuiPaper-root {
+        max-width: 790px;
+        box-shadow: 2px 2px 6px 0px #0000001a;
+        .MuiAccordionSummary-root {
+          padding: 10px 20px;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 21.78px;
+        }
+        .arrow-icon {
+          font-size: 20px;
+        }
+      }
+      h3 {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 21.78px;
+      }
+      ul {
+        padding: 0px 20px 5px 20px;
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        li {
+          list-style: disc;
+          color: #141414b9;
+        }
+      }
+    }
+    .right {
+      max-width: 380px;
+      .block {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 2px 2px 6px 0px #0000001a;
+        h3 {
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 21.78px;
+          margin-bottom: 40px;
+        }
+        p {
+          font-size: 16px;
+          line-height: 22px;
+          color: #141414b9;
+          margin-bottom: 10px;
+        }
+        a {
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          text-decoration: underline;
+          text-underline-offset: 2px;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 22px;
+          cursor: pointer;
+          color: #141414;
+        }
+        &.pdf-file {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: column;
+          h3 {
+            margin-bottom: 20px;
+          }
+          hr {
+            margin-bottom: 20px;
+            border-color: #f5f5f537;
+          }
+          img {
+            align-self: center;
+            width: 270px;
+            max-width: 270px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (width < 448px) {
+  .certificateStages {
+    padding: 80px 30px;
+
+    .content {
+      margin-top: 40px;
+      flex-direction: column;
+      gap: 40px;
+      .left {
+        .MuiPaper-root {
+          .MuiAccordionSummary-root {
+            padding: 8px 12px;
+          }
+        }
+      }
+      .right {
+        .block {
+          &.pdf-file {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (448px < width < 800px) {
+  .certificateStages {
+    padding: 80px 11vw;
+
+    .content {
+      margin-top: 40px;
+      flex-direction: column;
+      gap: 40px;
+      .left {
+        .MuiPaper-root {
+          .MuiAccordionSummary-root {
+            padding: 8px 12px;
+          }
+        }
+      }
+      .right {
+        max-width: 100%;
+        .block {
+          &.pdf-file {
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (800px < width < 1000px) {
+  .certificateStages {
+    padding: 80px 30px;
+
+    .content {
+      margin-top: 40px;
+      flex-direction: column;
+      gap: 40px;
+      .left {
+        .MuiPaper-root {
+          .MuiAccordionSummary-root {
+            padding: 8px 12px;
+          }
+        }
+      }
+      .right {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .block {
+          width: 48%;
+          &.pdf-file {
+            margin-top: 0;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (1000px < width < 1200px) {
+  .certificateStages {
+    padding: 80px 30px;
+  }
+}

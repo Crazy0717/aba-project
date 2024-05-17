@@ -1,0 +1,131 @@
+.register {
+  padding: 30px 70px;
+  max-width: 600px;
+  position: fixed;
+  top: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  background-color: #f8faff;
+  border-radius: 6px;
+  color: #141414;
+  display: none;
+  &.active {
+    display: inline-block;
+  }
+  .top {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    color: #141414;
+    h1 {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 41.15px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 21.78px;
+      text-align: center;
+    }
+  }
+  form {
+    margin-top: 10px;
+    .input {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      label {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+      }
+      input {
+        padding: 20px;
+        border-radius: 4px;
+        border: 1px #14141491 solid;
+      }
+    }
+
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      border-radius: 4px;
+      border: none;
+      background-color: #0d42aa;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.1s;
+      svg {
+        width: 28px;
+      }
+      &:active {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+@media screen and (width < 448px) {
+  .register {
+    padding: 30px 26px;
+    max-width: 340px;
+    width: 100%;
+    top: 4vh;
+
+    .top {
+      gap: 10px;
+      h1 {
+        font-size: 32px;
+        text-align: center;
+      }
+    }
+    form {
+      margin-top: 10px;
+    }
+  }
+}
+@media screen and (448px < width < 800px) {
+  .register {
+    max-width: 550px;
+    width: 100%;
+    top: 4vh;
+
+    .top {
+      gap: 10px;
+      h1 {
+        font-size: 32px;
+        text-align: center;
+      }
+    }
+    form {
+      margin-top: 10px;
+    }
+  }
+}
+@media screen and (800px < width < 1000px) {
+  .register {
+    padding: 30px 50px;
+    max-width: 550px;
+    width: 100%;
+    top: 4vh;
+
+    .top {
+      gap: 10px;
+      h1 {
+        font-size: 32px;
+        text-align: center;
+      }
+    }
+    form {
+      margin-top: 10px;
+    }
+  }
+}
