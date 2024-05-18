@@ -55,6 +55,9 @@ header {
     }
   }
 }
+main {
+  background-color: #f8faff;
+}
 .experience {
   padding: 0 140px;
   display: flex;
@@ -659,7 +662,7 @@ header {
   .videos {
     padding: 0 30px;
     .content {
-      .right{
+      .right {
         max-width: 62%;
       }
     }
