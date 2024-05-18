@@ -2,7 +2,7 @@ import "./Partners.scss"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/navigation"
-import { Navigation } from "swiper/modules"
+import { Autoplay, Navigation } from "swiper/modules"
 import { IoIosArrowBack } from "react-icons/io"
 
 const Partners = () => {
@@ -21,11 +21,13 @@ const Partners = () => {
           </button>
         </div>
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay]}
           navigation={{ nextEl: ".next", prevEl: ".prev" }}
           slidesPerView={6}
           className="slider"
           spaceBetween={20}
+          autoplay={{ delay: 1000 }}
+          loop
           breakpoints={{
             0: {
               slidesPerView: 1,

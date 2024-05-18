@@ -14,7 +14,9 @@ const Register = () => {
   }, [states.registerState])
 
   return (
-    <div className={states.registerState ? "register active" : "register"}>
+    <div
+      className={states.registerState ? "register active" : "register noactive"}
+    >
       <div className="top">
         <img src="./images/logo 1.svg" alt="" />
         <h1>Ro’yxatdan o’tish</h1>

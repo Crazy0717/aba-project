@@ -3,12 +3,67 @@ import { FaArrowRightLong } from "react-icons/fa6"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/navigation"
-import { Navigation } from "swiper/modules"
+import { Autoplay, Navigation } from "swiper/modules"
+import gsap from "gsap"
+import { useLayoutEffect } from "react"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const Moduls_slider = ({ elRef }) => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  useLayoutEffect(() => {
+    gsap.fromTo(
+      "#head",
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.4,
+        scrollTrigger: {
+          trigger: "#head",
+        },
+      }
+    )
+    gsap.fromTo(
+      ".swiper_slider",
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: ".swiper_slider",
+          start: "start 90%",
+        },
+      }
+    )
+    gsap.fromTo(
+      ".boxes",
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: ".boxes",
+          start: "start 50%",
+        },
+      }
+    )
+  }, [])
+
   return (
     <div ref={elRef} id="moduls-slider" className="moduls-slider">
-      <div className="top">
+      <div className="top" id="head">
         <h1>Kurs dasturidagi modullar qanday?</h1>
         <div className="buttons">
           <button className="left_btn">
@@ -114,7 +169,7 @@ const Moduls_slider = ({ elRef }) => {
             </div>
           </SwiperSlide>
         </Swiper>
-        <div className="boxes">
+        <div className="boxes" id="ada">
           <div className="box">
             <div className="head">
               <div className="square">

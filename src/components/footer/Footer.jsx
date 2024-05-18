@@ -2,7 +2,7 @@ import "./Footer.scss"
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <div className="logo">
         <img src="./images/logo 1.svg" alt="" />
       </div>

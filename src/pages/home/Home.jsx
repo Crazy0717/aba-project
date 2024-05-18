@@ -9,18 +9,57 @@ import {
   Navbar,
   Partners,
 } from "../../components"
-import { useRef } from "react"
+import { useLayoutEffect, useRef } from "react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const Home = () => {
   const dispatch = useDispatch()
   const modulsRef = useRef()
   const certificateRef = useRef()
   const experienceRef = useRef()
+  gsap.registerPlugin(ScrollTrigger)
 
   const handleRegister = () => {
     dispatch(enableSomeThing("registerState"))
     dispatch(enableSomeThing("backgroundState"))
   }
+
+  useLayoutEffect(() => {
+    const animate = (target, trigger) => {
+      gsap.fromTo(
+        target,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          scrollTrigger: { trigger, start: "start 90%" },
+        }
+      )
+    }
+
+    gsap.fromTo(
+      "header",
+      { opacity: 0, y: 20, scrollTrigger: { trigger: "header" } },
+      { opacity: 1, y: 0 }
+    )
+    gsap.fromTo(
+      ".footer",
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 1,
+        scrollTrigger: { trigger: ".footer", start: "start 90%" },
+      }
+    )
+    animate(".experience", ".experience")
+    animate(".whyUs_top", ".whyUs_top")
+    animate(".whyUs_boxes", ".whyUs_boxes")
+    animate(".videos", ".videos")
+    animate(".certificateStages", ".certificateStages")
+    animate(".partners", ".partners")
+  }, [])
 
   return (
     <div className="home">
@@ -72,13 +111,13 @@ const Home = () => {
           </div>
         </div>
         <div className="whyUs">
-          <div className="top">
+          <div className="top whyUs_top">
             <h2>Nega biz?</h2>
             <button onClick={handleRegister}>
               Ro’yxatdan o’tish <FaArrowRightLong />
             </button>
           </div>
-          <div className="boxes">
+          <div className="boxes whyUs_boxes">
             <div className="box">
               <div className="head">
                 <div className="square">
@@ -121,10 +160,10 @@ const Home = () => {
           </div>
         </div>
         <div className="videos">
-          <div className="top">
+          <div className="top videos_top">
             <h1>Taqdimot videosi</h1>
           </div>
-          <div className="content">
+          <div className="content videos_content">
             <div className="left">
               <div className="box">
                 <img src="./images/Union.svg" alt="" />
@@ -161,8 +200,8 @@ const Home = () => {
         </div>
         <CertificateStages elRef={certificateRef} />
         <Partners />
-        <Footer />
       </main>
+      <Footer />
     </div>
   )
 }
