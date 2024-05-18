@@ -13,7 +13,7 @@
     padding-left: 50px;
     .swiper-wrapper {
       display: flex;
-      align-items: center !important;
+      align-items: center;
     }
     img {
       max-width: 150px;
@@ -40,6 +40,22 @@
     .swiper-button-disabled {
       opacity: 0.6;
       color: #141414;
+    }
+  }
+}
+
+@media screen and (width < 400px) {
+  .partners {
+    .slider {
+      padding-left: 0px !important;
+    }
+    .buttons {
+      width: 84% !important;
+      top: 36%;
+    }
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
     }
   }
 }

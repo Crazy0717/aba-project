@@ -29,7 +29,6 @@ const Partners = () => {
           breakpoints={{
             0: {
               slidesPerView: 1,
-              centeredSlides: true,
             },
             400: {
               slidesPerView: 2,

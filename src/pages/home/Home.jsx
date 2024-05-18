@@ -2,7 +2,7 @@ import "./Home.scss"
 import { useDispatch } from "react-redux"
 import { FaArrowRightLong } from "react-icons/fa6"
 import { enableSomeThing } from "../../slices/states"
-import { CertificateStages, Moduls_slider, Partners } from "../../components"
+import { CertificateStages, Footer, Moduls_slider, Partners } from "../../components"
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -150,6 +150,7 @@ const Home = () => {
         </div>
         <CertificateStages />
         <Partners />
+        <Footer />
       </main>
     </div>
   )
