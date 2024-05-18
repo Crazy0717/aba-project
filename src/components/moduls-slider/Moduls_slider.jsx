@@ -5,9 +5,9 @@ import "swiper/css"
 import "swiper/css/navigation"
 import { Navigation } from "swiper/modules"
 
-const Moduls_slider = () => {
+const Moduls_slider = ({ elRef }) => {
   return (
-    <div className="moduls-slider">
+    <div ref={elRef} id="moduls-slider" className="moduls-slider">
       <div className="top">
         <h1>Kurs dasturidagi modullar qanday?</h1>
         <div className="buttons">

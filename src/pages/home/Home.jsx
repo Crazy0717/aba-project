@@ -2,10 +2,20 @@ import "./Home.scss"
 import { useDispatch } from "react-redux"
 import { FaArrowRightLong } from "react-icons/fa6"
 import { enableSomeThing } from "../../slices/states"
-import { CertificateStages, Footer, Moduls_slider, Partners } from "../../components"
+import {
+  CertificateStages,
+  Footer,
+  Moduls_slider,
+  Navbar,
+  Partners,
+} from "../../components"
+import { useRef } from "react"
 
 const Home = () => {
   const dispatch = useDispatch()
+  const modulsRef = useRef()
+  const certificateRef = useRef()
+  const experienceRef = useRef()
 
   const handleRegister = () => {
     dispatch(enableSomeThing("registerState"))
@@ -14,6 +24,7 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Navbar mdRef={modulsRef} crRef={certificateRef} exRef={experienceRef} />
       <header>
         <div className="left">
           <span>Yuliya Erz kurslari</span>
@@ -35,8 +46,8 @@ const Home = () => {
         </div>
       </header>
       <main>
-        <Moduls_slider />
-        <div className="experience">
+        <Moduls_slider elRef={modulsRef} />
+        <div ref={experienceRef} className="experience">
           <div className="left">
             <h2>13 Yillik ish tajribasi</h2>
             <span>
@@ -52,7 +63,7 @@ const Home = () => {
               quyoshli dunyomiz "bolalik nogironlarini reabilitatsiya qilish
               markazi (Moskva) asosida yaratilgan.
             </p>
-            <button>
+            <button onClick={handleRegister}>
               Ro’yxatdan o’tish <FaArrowRightLong />
             </button>
           </div>
@@ -148,7 +159,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <CertificateStages />
+        <CertificateStages elRef={certificateRef} />
         <Partners />
         <Footer />
       </main>

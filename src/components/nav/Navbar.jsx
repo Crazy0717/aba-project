@@ -11,7 +11,7 @@ import {
   enableSomeThing,
 } from "../../slices/states"
 
-const Navbar = () => {
+const Navbar = ({ mdRef, crRef, exRef }) => {
   const states = useSelector((state) => state.states)
   const dispatch = useDispatch()
 
@@ -24,16 +24,25 @@ const Navbar = () => {
     dispatch(disableBackground())
   }
 
+  const handleScroll = (ref, position = "start") => {
+    ref.current?.scrollIntoView({ behavior: "smooth", block: position })
+  }
   return (
     <nav>
       <div className="logo">
         <img src="./images/logo 1.svg" alt="" />
       </div>
       <ul>
-        <NavLink to={"/"}>Kurs xaqida</NavLink>
-        <NavLink to={"/course-plan"}>Kurs dasturi</NavLink>
-        <NavLink to={"/certificate"}>Sertifikatlash</NavLink>
-        <NavLink to={"/page"}>Mutaxassislar reestri</NavLink>
+        <NavLink className="current" to={"/"}>
+          Kurs xaqida
+        </NavLink>
+        <NavLink onClick={() => handleScroll(mdRef)}>Kurs dasturi</NavLink>
+        <NavLink onClick={() => handleScroll(crRef, "center")}>
+          Sertifikatlash
+        </NavLink>
+        <NavLink onClick={() => handleScroll(exRef, "center")}>
+          Mutaxassislar reestri
+        </NavLink>
       </ul>
       <div className="phoneNumber">
         <p>+998 94 622 39 99</p>
@@ -47,10 +56,16 @@ const Navbar = () => {
           <IoClose onClick={closeBars} />
         </div>
         <ul>
-          <NavLink to={"/"}>Kurs xaqida</NavLink>
-          <NavLink to={"/course-plan"}>Kurs dasturi</NavLink>
-          <NavLink to={"/certificate"}>Sertifikatlash</NavLink>
-          <NavLink to={"/page"}>Mutaxassislar reestri</NavLink>
+          <NavLink className="current" to={"/"}>
+            Kurs xaqida
+          </NavLink>
+          <NavLink onClick={() => handleScroll(mdRef)}>Kurs dasturi</NavLink>
+          <NavLink onClick={() => handleScroll(crRef, "center")}>
+            Sertifikatlash
+          </NavLink>
+          <NavLink onClick={() => handleScroll(exRef, "center")}>
+            Mutaxassislar reestri
+          </NavLink>
         </ul>
         <button>
           Ro’yxatdan o’tish <FaArrowRightLong />

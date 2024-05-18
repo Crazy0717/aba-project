@@ -3,9 +3,9 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material"
 import { FaArrowRightLong } from "react-icons/fa6"
 import { IoIosArrowDown } from "react-icons/io"
 
-const CertificateStages = () => {
+const CertificateStages = ({ elRef }) => {
   return (
-    <div className="certificateStages">
+    <div ref={elRef} className="certificateStages">
       <div className="top">
         <h2>Sertifikatlashning 5 darajasi</h2>
       </div>
