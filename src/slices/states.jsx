@@ -10,13 +10,6 @@ export const counterSlice = createSlice({
   name: "states",
   initialState,
   reducers: {
-    enableBackground: (state) => {
-      state.backgroundState = true
-    },
-    disableBackground: (state) => {
-      state.backgroundState = false
-    },
-
     enableSomeThing: (state, name) => {
       state[name.payload] = true
     },
@@ -32,12 +25,7 @@ export const counterSlice = createSlice({
   },
 })
 
-export const {
-  enableBackground,
-  disableBackground,
-  disablEveryThing,
-  enableSomeThing,
-  disableSomeThing,
-} = counterSlice.actions
+export const { disablEveryThing, enableSomeThing, disableSomeThing } =
+  counterSlice.actions
 
 export default counterSlice.reducer

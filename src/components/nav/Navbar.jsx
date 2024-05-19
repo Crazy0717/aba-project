@@ -4,12 +4,7 @@ import { HiBars3 } from "react-icons/hi2"
 import { IoClose } from "react-icons/io5"
 import { FaArrowRightLong } from "react-icons/fa6"
 import { useDispatch, useSelector } from "react-redux"
-import {
-  disableBackground,
-  disableSomeThing,
-  enableBackground,
-  enableSomeThing,
-} from "../../slices/states"
+import { disableSomeThing, enableSomeThing } from "../../slices/states"
 
 const Navbar = ({ mdRef, crRef, exRef }) => {
   const states = useSelector((state) => state.states)
@@ -17,11 +12,11 @@ const Navbar = ({ mdRef, crRef, exRef }) => {
 
   const openBars = () => {
     dispatch(enableSomeThing("barsState"))
-    dispatch(enableBackground())
+    dispatch(enableSomeThing("backgroundState"))
   }
   const closeBars = () => {
     dispatch(disableSomeThing("barsState"))
-    dispatch(disableBackground())
+    dispatch(disableSomeThing("backgroundState"))
   }
 
   const handleScroll = (ref, position = "start") => {
