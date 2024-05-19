@@ -20,8 +20,10 @@ const Navbar = ({ mdRef, crRef, exRef }) => {
   }
 
   const handleScroll = (ref, position = "start") => {
+    closeBars()
     ref.current?.scrollIntoView({ behavior: "smooth", block: position })
   }
+
   return (
     <nav>
       <div className="logo">
